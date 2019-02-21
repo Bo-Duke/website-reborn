@@ -1,6 +1,26 @@
 about:
-  name: Maxime Bouveron
+  firstName: Maxime
+  lastName: Bouveron
   bio: Étudiant en informatique passionné par le front-end
   job: Développeur front-end à CS
   studies: Master ICE
   location: Toulouse
+  twitter: 'maxbvrn'
+  github: 'Bo-Duke'
+skills:
+  - name: Javascript
+    fa-name: js
+    fg: yellow
+    bg: black
+  - name: React
+    fa-name: react
+    fg: white
+    bg: blue
+  - name: Vue.js
+    fa-name: vuejs
+    fg: white
+    bg: green
+  - name: Angular
+    fa-name: angular
+    fg: white
+    bg: red
