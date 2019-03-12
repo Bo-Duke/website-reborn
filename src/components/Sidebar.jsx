@@ -4,12 +4,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Wrapper = styled.div`
   padding: 20px;
+  background-color: ${({ theme }) => theme.bg2};
+  transition: all ease 0.5s;
 `
 
 const ProfilePic = styled.img`
   border-radius: 50%;
   width: 150px;
-  // margin-left: 40px;
 `
 
 const Sidebar = ({ data }) => (

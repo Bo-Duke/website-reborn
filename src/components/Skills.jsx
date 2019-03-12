@@ -2,15 +2,19 @@ import React from 'react'
 import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
+import Section from './Section'
+
 const Wrapper = styled.div`
   display: flex;
+  text-decoration: none;
 `
 
-const Skill = styled.div`
-  background-color: white;
+const Skill = styled.a`
+  background-color: ${({ theme }) => theme.bg2};
+  color: ${({ theme }) => theme.fg};
+  text-decoration: none;
   margin: 5px;
   border-radius: 5px;
-  color: black;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
 
   transition: all 0.2s ease;
@@ -35,23 +39,17 @@ const SkillText = styled.div`
   padding: 5px;
 `
 
-const SubTitle = styled.h3`
-  font-size: 0.8em;
-  opacity: 0.8;
-  font-weight: normal;
-`
-
 const Skills = ({ data }) => (
-  <div>
-    <h2>Compétences</h2>
-    <SubTitle>Les compétences que j'ai acquéri au fil du temps</SubTitle>
+  <Section
+    title="Compétences"
+    subtitle="Les compétences que j'ai acquéri au fil du temps"
+  >
     <Wrapper>
       {data.map(skill => (
-        <Skill bg={skill.bg}>
+        <Skill href={skill.link} bg={skill.bg}>
           <SkillIcon bg={skill.bg}>
             <FontAwesomeIcon
               size="6x"
-              fixedWidth
               color={skill.fg}
               icon={['fab', skill['fa-name']]}
             />
@@ -60,7 +58,7 @@ const Skills = ({ data }) => (
         </Skill>
       ))}
     </Wrapper>
-  </div>
+  </Section>
 )
 
 export default Skills
