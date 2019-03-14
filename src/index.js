@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom'
 import styled, { ThemeProvider, createGlobalStyle } from 'styled-components'
 import yaml from 'js-yaml'
 
+import './i18n'
+
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {
   faMapMarkerAlt,
@@ -77,6 +79,7 @@ const App = () => {
         <Wrapper>
           <Sidebar data={data.about} />
           <MainContent>
+            <button onClick={toggleDarkMode}>THEME!</button>
             <button onClick={toggleDarkMode}>THEME!</button>
             <Skills data={data.skills} />
             <Education data={data.education} />
