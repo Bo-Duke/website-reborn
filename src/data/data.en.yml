@@ -1,13 +1,13 @@
 about:
   firstName: Maxime
   lastName: Bouveron
-  bio: Étudiant en informatique passionné par le front-end
-  job: Développeur Front-End à CS
-  studies: Master ICE
+  bio: CS student in love with Front-End development
+  job: Front-End developer at CS
+  studies: MSc ICE
   location: Toulouse, France
   twitter: maxbvrn
   github: Bo-Duke
-  skills:
+skills:
   - name: Javascript
     fa-name: js
     fg: yellow

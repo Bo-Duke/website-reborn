@@ -17,7 +17,7 @@ i18n
           'school-subtitle': 'Yo I have education',
           work: 'Work',
           'work-subtitle': 'Yo I have worked',
-          projetcs: 'Projects',
+          projects: 'Projects',
           'projects-subtitle': 'Yo I made stuff',
         },
       },

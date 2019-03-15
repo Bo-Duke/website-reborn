@@ -11,8 +11,7 @@ const Wrapper = styled.div`
 `
 
 const Work = ({ data }) => {
-  const { t, i18n } = useTranslation()
-  console.log(i18n)
+  const { t } = useTranslation()
 
   return (
     <Section title={t('work')} subtitle={t('work-subtitle')}>

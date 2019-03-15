@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { useTranslation } from 'react-i18next'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import Section from './Section'
@@ -39,26 +40,27 @@ const SkillText = styled.div`
   padding: 5px;
 `
 
-const Skills = ({ data }) => (
-  <Section
-    title="Compétences"
-    subtitle="Les compétences que j'ai acquéri au fil du temps"
-  >
-    <Wrapper>
-      {data.map(skill => (
-        <Skill href={skill.link} bg={skill.bg}>
-          <SkillIcon bg={skill.bg}>
-            <FontAwesomeIcon
-              size="6x"
-              color={skill.fg}
-              icon={['fab', skill['fa-name']]}
-            />
-          </SkillIcon>
-          <SkillText>{skill.name}</SkillText>
-        </Skill>
-      ))}
-    </Wrapper>
-  </Section>
-)
+const Skills = ({ data }) => {
+  const { t } = useTranslation()
+
+  return (
+    <Section title={t('skills')} subtitle={t('skills-subtitle')}>
+      <Wrapper>
+        {data.map(skill => (
+          <Skill href={skill.link} bg={skill.bg}>
+            <SkillIcon bg={skill.bg}>
+              <FontAwesomeIcon
+                size="6x"
+                color={skill.fg}
+                icon={['fab', skill['fa-name']]}
+              />
+            </SkillIcon>
+            <SkillText>{skill.name}</SkillText>
+          </Skill>
+        ))}
+      </Wrapper>
+    </Section>
+  )
+}
 
 export default Skills

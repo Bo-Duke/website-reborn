@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
 import styled, { ThemeProvider, createGlobalStyle } from 'styled-components'
 import yaml from 'js-yaml'
@@ -18,11 +18,12 @@ import Skills from './components/Skills'
 import Education from './components/Education'
 import Work from './components/Work'
 import Projects from './components/Projects'
-import rawData from './data/data.fr.yml'
+import frenchData from './data/data.fr.yml'
+import englishData from './data/data.en.yml'
 
-import { useDarkMode } from './hooks'
+import { useDarkMode, useLanguage } from './hooks'
 
-const data = yaml.load(rawData)
+const data = { fr: yaml.load(frenchData), en: yaml.load(englishData) }
 library.add(fab, faMapMarkerAlt, faGraduationCap, faBriefcase)
 
 const darkTheme = {
@@ -71,26 +72,27 @@ const MainContent = ({ children }) => (
 
 const App = () => {
   const [darkMode, toggleDarkMode] = useDarkMode()
+  const [language, toggleLanguage] = useLanguage()
 
   return (
     <ThemeProvider theme={darkMode ? darkTheme : theme}>
       <>
         <GlobalStyle />
         <Wrapper>
-          <Sidebar data={data.about} />
+          <Sidebar data={data[language].about} />
           <MainContent>
             <button onClick={toggleDarkMode}>THEME!</button>
-            <button onClick={toggleDarkMode}>THEME!</button>
-            <Skills data={data.skills} />
-            <Education data={data.education} />
-            <Work data={data.work} />
-            <Projects data={data.projects} />
-            <Education data={data.education} />
-            <Work data={data.work} />
-            <Projects data={data.projects} />
-            <Education data={data.education} />
-            <Work data={data.work} />
-            <Projects data={data.projects} />
+            <button onClick={toggleLanguage}>{language}</button>
+            <Skills data={data[language].skills} />
+            <Education data={data[language].education} />
+            <Work data={data[language].work} />
+            <Projects data={data[language].projects} />
+            <Education data={data[language].education} />
+            <Work data={data[language].work} />
+            <Projects data={data[language].projects} />
+            <Education data={data[language].education} />
+            <Work data={data[language].work} />
+            <Projects data={data[language].projects} />
           </MainContent>
         </Wrapper>
       </>
