@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom'
 import styled, { ThemeProvider, createGlobalStyle } from 'styled-components'
 import yaml from 'js-yaml'
@@ -52,6 +52,10 @@ const Wrapper = styled.div`
   display: grid;
   grid-template-columns: 300px 1fr;
   height: 100vh;
+  @media only screen and (max-width: 820px) {
+    grid-template-columns: 1fr;
+    grid-template-row: 100px 1fr;
+  }
 `
 
 const StyledMainContent = styled.div`
@@ -62,6 +66,10 @@ const StyledMainContent = styled.div`
 const ScrollArea = styled.div`
   height: 100vh;
   overflow: scroll;
+  @media only screen and (max-width: 820px) {
+    height: 100%;
+    overflow: visible;
+  }
 `
 
 const MainContent = ({ children }) => (

@@ -6,8 +6,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Section from './Section'
 
 const Wrapper = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   text-decoration: none;
+  @media only screen and (max-width: 525px) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-row: 1fr 1fr;
+    width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-items: center;
+  }
 `
 
 const Skill = styled.a`
@@ -15,6 +24,7 @@ const Skill = styled.a`
   color: ${({ theme }) => theme.fg};
   text-decoration: none;
   margin: 5px;
+  width: 120px;
   border-radius: 5px;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
 
@@ -33,7 +43,6 @@ const SkillIcon = styled.div`
   border-radius: 5px 5px 0px 0px;
   background-color: ${({ bg }) => bg};
   height: 120px;
-  width: 120px;
 `
 
 const SkillText = styled.div`
